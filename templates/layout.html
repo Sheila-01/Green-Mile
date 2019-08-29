@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- materialize css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/materialize.css') }}">
+
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+
+
+   {% if title %}
+        <title>Green Mile - {{ title }}</title>
+   {% else %}
+        <title>Green Mile </title>
+   {% endif %}
+</head>
+<body>
+
+        <header class=" ">
+                <nav class=" ">
+                    <div class=" ">
+                        <a href="/" class=" "></a>
+                        <button class=" " type="button" data-toggle="collapse" data-target="">
+                            <span class=" "></span>
+                        </button>
+                        <div class=" " id="navbarToggle">
+                            <div class=" ">
+                                <a href="{{ url_for('home') }}" class=" ">Home</a>
+                                <a href="{{ url_for('about')}}" class=" ">About Page</a>
+                            </div>
+                            <!-- Nav-Bar Right Side -->
+                            <div class="nav-wrapper">
+                                {% if current_user.is_authenticated %}
+                                    <a href="{{ url_for('new_post')}}" class=" ">Update</a>
+                                    <a href="{{ url_for('account')}}" class=" ">Account</a>
+                                    <a href="{{ url_for('logout')}}" class=" ">Logout</a>
+                                {% else %}
+                                    <a href="{{ url_for('login')}}" class=" ">Login</a>
+                                    <a href="{{ url_for('register') }}" class=" ">Register</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main role="main" class=" ">
+                <div class=" ">
+                    <div class=" ">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}">
+                                        {{ message }}
+                                    </div>							
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        {% block content %}{% endblock %}
+                        
+                    </div>
+                    <div class="nav-wrapper">
+                        <div class=" ">
+                            <h3>Dashboard</h3>
+                            <p class=" ">
+                                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                                    <li>Arrivals</li>
+                                    <li>Loaded</li>
+                                    <li>Still Pending</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            
+    
+</body>
+</html>
