@@ -1,0 +1,54 @@
+{% extends "layout.html" %} 
+  {% block content %}
+
+    <div class="container">
+      <h3>Login Here</h3>
+    <form method="POST" action="">
+
+      <fieldset>
+        <legend>Login</legend>
+          <div class="input-field">
+            {{ form.email.label(class="")}}
+            {% if form.email.errors %}
+            <div class="">
+              {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %}
+            {{ form.email(class="") }}
+            {% endif %}
+          </div>
+
+        <div class="input-field">
+          {{ form.password.label(class=" ") }}
+
+          {% if form.password.errors %}
+          {{ form.password(class= " is-invalid") }}
+          <div class="">
+            {% for error in form.password.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          {{ form.password(class= " ") }}
+          {% endif %}
+        </div>
+      </fieldset>
+      <div class="badge">
+        {{ form.submit(class= "btn waves-effect waves-light") }}
+
+        <span class="badge">
+            Don't have an account?
+            <a href="{{ url_for('register') }}"> Register Here</a>
+          </span>
+
+          <span class="badge">
+              Forgotten your password?
+              <a href="#"> click Here</a>
+            </span>
+      </div>
+    </form>
+    </div>
+
+  {% endblock content %}

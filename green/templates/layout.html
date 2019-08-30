@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- materialize css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/materialize.css') }}">
+
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+
+        
+   {% if title %}
+        <title>Green Mile - {{ title }}</title>
+   {% else %}
+        <title>Green Mile </title>
+   {% endif %}
+</head>
+<body>
+    <nav class="layout-nav">
+            <div class="">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="upper-nav-logo">
+
+                </div>
+
+		</nav>
+
+		
+
+            <main role="main" class=" ">
+
+                <div class=" ">
+                    <div class=" ">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}">
+                                        {{ message }}
+                                    </div>							
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        {% block content %}{% endblock %}
+                        
+                    </div>
+                    
+                </div>
+            </main>
+            
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+</body>
+</html>

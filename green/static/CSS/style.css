@@ -1,0 +1,27 @@
+span{
+    margin-top: 10px;
+}
+
+.badge{
+    padding: 20px;
+}
+
+.layout-nav {
+    background-color: #0022;
+}
+
+.upper-nav-logo {
+    width: 200px;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.lowr {
+    background-color: white;
+    text-align: right;
+    color: black;
+}
+
+li {
+    float: right;
+}

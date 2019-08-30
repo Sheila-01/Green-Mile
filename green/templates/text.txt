@@ -1,0 +1,59 @@
+  <a href="{{ url_for('about')}}" class=" ">About Page</a>
+                                  {% if current_user.is_authenticated %}
+                                    <a href="{{ url_for('new_post')}}" class=" ">Update</a>
+                                    <a href="{{ url_for('account')}}" class=" ">Account</a>
+                                    <a href="{{ url_for('logout')}}" class=" ">Logout</a>
+                                {% else %}
+                                    <a href="{{ url_for('login')}}" class=" ">Login</a>
+                                    <a href="{{ url_for('register') }}" class=" ">Register</a>
+                                {% endif %}
+
+  {{ form.hidden.tag() }}
+{{ form.username.label(class=" ") }}
+
+
+     <div class="">
+        {{ form.email.label(class=" ") }}
+
+        {% if form.email.errors %}
+        {{ form.email(class= " is-invalid") }}
+        <div class="">
+          {% for error in form.email.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.email(class= " ") }}
+        {% endif %}
+      </div>
+
+<!-- icons -->
+        <link rel="stylesheet" href="{{ url_for(https://fonts.googleapis.com/icon?family=Material+Icons)}}">
+
+<h1>Type Hello</h1>
+
+  <!-- materialize css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='CSS/materialize.css') }}">
+
+
+        <header class="">
+                <nav class=" ">
+                    <div class=" ">
+                        <a href="/" class=" "></a>
+                        <button class=" " type="button" data-toggle="collapse" data-target="">
+                            <span class=" "></span>
+                        </button>
+                        <div class=" " id="navbar">
+                            <div class=" Nav-Bar">
+                                <a href="{{ url_for('home') }}" class=" ">Home</a>
+                              
+                            </div>
+                            <!-- Nav-Bar Right Side -->
+                            <div class="nav-wrapper">
+                                    <a href="{{ url_for('login')}}" class=" ">Login</a>
+                                    <a href="{{ url_for('register') }}" class=" ">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
