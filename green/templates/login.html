@@ -6,7 +6,7 @@
     <form method="POST" action="">
 
       <fieldset>
-        <legend>Login</legend>
+        <legend></legend>
           <div class="input-field">
             {{ form.email.label(class="")}}
             {% if form.email.errors %}
@@ -34,8 +34,8 @@
           {{ form.password(class= " ") }}
           {% endif %}
         </div>
-      </fieldset>
-      <div class="badge">
+
+              <div class="badge">
         {{ form.submit(class= "btn waves-effect waves-light") }}
 
         <span class="badge">
@@ -48,6 +48,8 @@
               <a href="#"> click Here</a>
             </span>
       </div>
+      </fieldset>
+
     </form>
     </div>
 

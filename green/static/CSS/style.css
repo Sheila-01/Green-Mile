@@ -22,6 +22,17 @@ span{
     color: black;
 }
 
+.svc{
+    display: block;
+}
+
 li {
     float: right;
+}
+
+.edit{
+    /* background-color: rgb(136, 132, 132);    */
+}
+.edit input{
+    width: 50%;
 }

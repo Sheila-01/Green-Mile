@@ -57,3 +57,47 @@
                     </div>
                 </nav>
             </header>
+
+<div class="carousel-wrapper">
+		<div class="carousel">
+		  <img class="carousel__photo initial" src="{{ url_for('static', filename='img/connect.jpg') }}">
+		  <img class="carousel__photo" src="{{ url_for('static', filename='img/images.png')}}">
+		  <img class="carousel__photo" src="{{ url_for('static', filename='img/images.jpeg') }}">
+		  <img class="carousel__photo" src="{{ url_for('static', filename='/img/iStock-868763108.jpg')}}">
+			
+		  <div class="carousel__button--next"></div>
+		  <div class="carousel__button--prev"></div>
+		</div>
+	  </div>
+
+       <a href="{{ url_for('') }}"> Register Here</a>
+
+# @app.route('/register', methods=["GET","POST"])
+# def register():
+#     form = RegistrationForm()
+#     if form.validate_on_submit():
+#         hashed_password=bcrypt.generate_password_hash(form.password.data).decode("utf-8")
+#         user = User(username = form.username.data, email = form.email.data, password = hashed_password)if user and bcrypt.check_password_hash(user.password, form.password.data):if user and bcrypt.check_password_hash(user.password, form.password.data):
+# 			login_user(user, remember=form.remember.data)
+# 			next_page = request.args.get('next')
+# 			return redirect(next_page) if next_page else redirect(url_for('home'))
+# 		else:
+# 			flash('Login Unsuccessful. Please check email and password', 'danger')
+# 	return render_template('login.html',
+# 							title='Login',
+# 							form=form
+# 							)
+# 			login_user(user, remember=form.remember.data)
+# 			next_page = request.args.get('next')
+# 			return redirect(next_page) if next_page else redirect(url_for('home'))
+# 		else:
+# 			flash('Login Unsuccessful. Please check email and password', 'danger')
+# 	return render_template('login.html',
+# 							title='Login',
+# 							form=form
+# 							)
+#         db.session.add(user)
+#         db.session.commit()
+#         flash(f'Account created for {form.username.data}!', 'success')
+#         return redirect (url_for('home'))
+#     return render_template('register.html', title = 'Register', form=form)

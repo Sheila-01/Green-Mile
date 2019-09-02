@@ -65,14 +65,16 @@
         {{ form.confirm_password(class= " ") }}
         {% endif %}
       </div>
-    </fieldset>
-    <div class="badge">
+
+          <div class="badge">
       {{ form.submit(class= "btn waves-effect waves-light") }}
       <span class="badge">
         Already have an account? <a href="{{ url_for('login') }}"> login Here</a>
       </span>
      
     </div>
+    </fieldset>
+
   </form>
 </div>
 
